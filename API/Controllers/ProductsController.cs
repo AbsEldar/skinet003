@@ -28,5 +28,17 @@ namespace API.Controllers
         {
             return Ok(await _repo.GetProductByIdAsync(id));
         }
+
+        [HttpGet("brands")]
+        public async Task<ActionResult<List<ProductBrand>>> GetProductBrands()
+        {
+          return Ok(await _repo.GetProductBrandsAsync());
+        }
+
+        [HttpGet("types")]
+        public async Task<ActionResult<List<ProductType>>> GetProductTypes()
+        {
+          return Ok(await _repo.GetProductTypesAsync());
+        }
     }
 }
